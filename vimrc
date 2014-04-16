@@ -22,13 +22,11 @@ Plugin 'gmarik/vundle'
 
 " colorscheme
 Plugin 'tomasr/molokai'
-
 Plugin 'scrooloose/nerdtree'
-nnoremap <silent><F3> :NERDTreeToggle<CR>
-"Open a NERDTree automatically when vim starts up if no files were specified
-autocmd vimenter * if !argc() | NERDTree | endif
-"Close vim if the only window left open is a NERDTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+Plugin 'kien/ctrlp.vim'
+
+nnoremap <silent><c-n> :NERDTreeToggle<cr>
+nnoremap <silent><c-p> :CtrlP<cr>
 
 filetype plugin indent on     " required
 
