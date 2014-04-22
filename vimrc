@@ -2,7 +2,6 @@
 " Author: Carpenter Yi <carpenter.yi@gmail.com>
 " """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-
 " Vundle setting
 " """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -12,30 +11,32 @@ filetype off                  " required
 " Linux runtime path
 "set rtp+=~/.vim/bundle/vundle/
 "call vundle#rc()
+
 " Windows runtime path
 set rtp+=~/vimfiles/bundle/vundle/
 let path='~/vimfiles/bundle'
 call vundle#rc(path)
 
-" let Vundle manage Vundle, required
 Plugin 'gmarik/vundle'
-
-" colorscheme
 Plugin 'tomasr/molokai'
-Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
+Plugin 'ervandew/supertab'
+Plugin 'scrooloose/nerdtree'
+Plugin 'vim-scripts/AutoComplPop'
+
+let g:SuperTabMappingForward='<s-tab>'
+let g:SuperTabMappingBackward='<tab>'
 
 nnoremap <silent><c-n> :NERDTreeToggle<cr>
-nnoremap <silent><c-p> :CtrlP<cr>
-
-filetype plugin indent on     " required
-
 
 " General setting
 " """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Make backspace working like 'backspace' in edit mode.
 set backspace=indent,eol,start
+
+" Enable file type dectection and loading the plugin and indent file.
+filetype plugin indent on
 
 " Don't pollute any folders.
 set nobackup
@@ -138,6 +139,9 @@ set lcs=tab:@@,trail:^,eol:$
 
 " Cursor blink.
 set guicursor=a:blinkwait700-blinkon800-blinkoff500
+
+" Avoiding the 'Hit ENTER to continue' prompts
+set cmdheight=2
 
 " Move among windows hotkey.
 nnoremap <silent><C-h> <C-W>h
